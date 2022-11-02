@@ -1,0 +1,7 @@
+{
+  "/api/*": {
+    "target": "https://staging.irobot.link/external-exchanges/logs",
+    "secure": false,
+    "logLevel": "debug"
+  }
+}

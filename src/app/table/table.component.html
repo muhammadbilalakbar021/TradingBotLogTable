@@ -1,0 +1,76 @@
+<mat-form-field appearance="standard">
+  <mat-label>Filter</mat-label>
+  <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Mia" #input>
+</mat-form-field>
+<div class="mat-elevation-z8">
+  <table mat-table [dataSource]="dataSource" matSort>
+
+    <!-- Position Column -->
+    <ng-container matColumnDef="createdAt">
+      <th mat-header-cell *matHeaderCellDef> No. </th>
+      <td mat-cell *matCellDef="let element"> {{element.createdAt| date: 'dd-MM-yyyy'}} {{element.createdAt| time }}
+      </td>
+    </ng-container>
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef> Name </th>
+      <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+    </ng-container>
+
+    <!-- Weight Column -->
+    <ng-container matColumnDef="BTCUSDT">
+      <th mat-header-cell *matHeaderCellDef> BTCUSDT </th>
+      <td mat-cell *matCellDef="let element"> {{element.BTCUSDT}} </td>
+    </ng-container>
+
+    <!-- Symbol Column -->
+    <ng-container matColumnDef="DOGEUSDT">
+      <th mat-header-cell *matHeaderCellDef> DOGEUSDT </th>
+      <td mat-cell *matCellDef="let element"> {{element.DOGEUSDT}} </td>
+    </ng-container>
+
+    <!-- Symbol Column -->
+    <ng-container matColumnDef="ETHUSDT">
+      <th mat-header-cell *matHeaderCellDef> ETHUSDT </th>
+      <td mat-cell *matCellDef="let element"> {{element.ETHUSDT}} </td>
+    </ng-container>
+
+    <!-- Symbol Column -->
+    <ng-container matColumnDef="LTCUSDT">
+      <th mat-header-cell *matHeaderCellDef> LTCUSDT </th>
+      <td mat-cell *matCellDef="let element"> {{element.LTCUSDT}} </td>
+    </ng-container>
+
+    <!-- Symbol Column -->
+    <ng-container matColumnDef="SOLUSDT">
+      <th mat-header-cell *matHeaderCellDef> SOLUSDT </th>
+      <td mat-cell *matCellDef="let element"> {{element.SOLUSDT}} </td>
+    </ng-container>
+
+    <!-- Symbol Column -->
+    <ng-container matColumnDef="TRXUSDT">
+      <th mat-header-cell *matHeaderCellDef> TRXUSDT </th>
+      <td mat-cell *matCellDef="let element"> {{element.TRXUSDT}} </td>
+    </ng-container>
+
+    <!-- Symbol Column -->
+    <ng-container matColumnDef="XRPUSDT">
+      <th mat-header-cell *matHeaderCellDef> XRPUSDT </th>
+      <td mat-cell *matCellDef="let element"> {{element.XRPUSDT}} </td>
+    </ng-container>
+
+    <!-- Symbol Column -->
+    <ng-container matColumnDef="BNBUSDT">
+      <th mat-header-cell *matHeaderCellDef> BNBUSDT </th>
+      <td mat-cell *matCellDef="let element"> {{element.BNBUSDT}} </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+
+  <mat-paginator #paginator [pageSizeOptions]="[50, 100, 500]" showFirstLastButtons
+    aria-label="Select page of periodic elements">
+  </mat-paginator>
+</div>
